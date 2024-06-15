@@ -9,25 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     @State var horas: HorasVM
-    @State var buttonActive: Bool = false
+    @State var buttonDisabled: Int = 0
+    let iconEntrada = "square.and.arrow.down.on.square"
+    let iconSalida = "square.and.arrow.up.on.square"
+    let cornerRadius = 20.0
     
     var body: some View {
-        VStack {
-            Text("Fecha: \(horas.laboral.fecha.formatted(date: .abbreviated, time: .omitted))")
-            HStack {
-                ButtonDateView(hora: $horas.laboral.horaEntrada, name: "Entrada", color: .cyan, cornerRadius: 20.0, isActive: $buttonActive)
-                    .disabled(buttonActive)
-                    
-                ButtonDateView(hora: $horas.laboral.horaSalida, name: "Salida", color: .cyan, cornerRadius: 20.0, isActive: $buttonActive)
-                    .disabled(!buttonActive)
-                    
-                    
+        ScrollView {
+            GroupBox {
+                VStack {
+                    Text("Fecha: \(horas.laboral.fecha.formatted(date: .abbreviated, time: .omitted))")
+                    HStack {
+                        ButtonDateView(hora: $horas.laboral.horaEntrada, iconImage: iconEntrada, buttonDisabled: $buttonDisabled)
+                            .disabled(buttonDisabled == 0 ? false : true)
+                            
+                        ButtonDateView(hora: $horas.laboral.horaSalida, iconImage: iconSalida, buttonDisabled: $buttonDisabled)
+                            .disabled(buttonDisabled == 1 ? false : true)
+                            
+                            
+                    }
+                    Text("Total de horas: \(horas.calculaTotalHoras(hEntrada: horas.laboral.horaEntrada, hSalida: horas.laboral.horaSalida))")
+                }
             }
-            Text("Total de horas: \(horas.calculaTotalHoras(hEntrada: horas.laboral.horaEntrada, hSalida: horas.laboral.horaSalida))")
+            .cornerRadius(cornerRadius)
         }
-        .padding()
-        .background(Color.indigo)
-        .cornerRadius(20.0)
     }
     
     

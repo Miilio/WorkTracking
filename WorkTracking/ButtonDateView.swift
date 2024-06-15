@@ -9,28 +9,28 @@ import SwiftUI
 
 struct ButtonDateView: View {
     @Binding var hora: Date
-    let name: String
-    let color: Color
-    let cornerRadius: Double
-    @Binding var isActive: Bool
+    let iconImage: String
+    @Binding var buttonDisabled: Int
+    @State var showText: Bool = false
+    let cornerRadius = 20.0
     
     var body: some View {
         Button {
             hora = Date.now
-            isActive = !isActive
+            buttonDisabled += 1
+            showText.toggle()
         } label: {
             VStack {
-                Text("\(name)")
-                Text(hora.formatted(date: .omitted, time: .shortened))
+                Image(systemName: iconImage)
+                Text(showText ? hora.formatted(date: .omitted, time: .shortened) : "")
             }
         }
         .padding()
-        .background(color)
+        .background(.cyan)
         .cornerRadius(cornerRadius)
-        
     }
 }
 
 #Preview {
-    ButtonDateView(hora: .constant(Date.now), name: "Entrada", color: .cyan, cornerRadius: 20.0, isActive: .constant(false))
+    ButtonDateView(hora: .constant(Date.now), iconImage: "square.and.arrow.up.on.square", buttonDisabled: .constant(1))
 }
