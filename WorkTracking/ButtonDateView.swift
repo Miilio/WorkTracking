@@ -12,10 +12,12 @@ struct ButtonDateView: View {
     let name: String
     let color: Color
     let cornerRadius: Double
+    @Binding var isActive: Bool
     
     var body: some View {
         Button {
             hora = Date.now
+            isActive = !isActive
         } label: {
             VStack {
                 Text("\(name)")
@@ -30,5 +32,5 @@ struct ButtonDateView: View {
 }
 
 #Preview {
-    ButtonDateView(hora: .constant(Date.now), name: "Entrada", color: .cyan, cornerRadius: 20.0)
+    ButtonDateView(hora: .constant(Date.now), name: "Entrada", color: .cyan, cornerRadius: 20.0, isActive: .constant(false))
 }
