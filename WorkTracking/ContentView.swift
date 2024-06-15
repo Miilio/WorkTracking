@@ -14,12 +14,16 @@ struct ContentView: View {
         VStack {
             Text("Fecha: \(horas.laboral.fecha.formatted(date: .abbreviated, time: .omitted))")
             HStack {
-                ButtonDateView(hora: $horas.laboral.horaEntrada, name: "Entrada")
-                ButtonDateView(hora: $horas.laboral.horaSalida, name: "Salida")
+                ButtonDateView(hora: $horas.laboral.horaEntrada, name: "Entrada", color: .cyan, cornerRadius: 20.0)
+                    
+                ButtonDateView(hora: $horas.laboral.horaSalida, name: "Salida", color: .cyan, cornerRadius: 20.0)
+                    
             }
             Text("Total de horas: \(horas.calculaTotalHoras(hEntrada: horas.laboral.horaEntrada, hSalida: horas.laboral.horaSalida))")
         }
         .padding()
+        .background(Color.indigo)
+        .cornerRadius(20.0)
     }
     
     

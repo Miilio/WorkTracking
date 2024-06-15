@@ -10,6 +10,8 @@ import SwiftUI
 struct ButtonDateView: View {
     @Binding var hora: Date
     let name: String
+    let color: Color
+    let cornerRadius: Double
     
     var body: some View {
         Button {
@@ -20,9 +22,13 @@ struct ButtonDateView: View {
                 Text(hora.formatted(date: .omitted, time: .shortened))
             }
         }
+        .padding()
+        .background(color)
+        .cornerRadius(cornerRadius)
+        
     }
 }
 
 #Preview {
-    ButtonDateView(hora: .constant(Date.now), name: "Entrada")
+    ButtonDateView(hora: .constant(Date.now), name: "Entrada", color: .cyan, cornerRadius: 20.0)
 }
