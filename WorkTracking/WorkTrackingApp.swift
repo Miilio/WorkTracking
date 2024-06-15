@@ -11,7 +11,7 @@ import SwiftUI
 struct WorkTrackingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(hEntrada: Date(), hSalida: Date(), fecha: Date())
         }
     }
 }
