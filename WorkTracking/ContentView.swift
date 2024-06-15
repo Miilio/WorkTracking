@@ -8,49 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var hEntrada: Date
-    @State var hSalida: Date
-    let fecha: Date
+    @State var horas: HorasVM
     
     var body: some View {
         VStack {
-            Text("Fecha: \(fecha.formatted(date: .abbreviated, time: .omitted))")
+            Text("Fecha: \(horas.laboral.fecha.formatted(date: .abbreviated, time: .omitted))")
             HStack {
-                Button {
-                    hEntrada = Date.now
-                } label: {
-                    VStack {
-                        Text("Entrada")
-                        Text(hEntrada.formatted(date: .omitted, time: .shortened))
-                    }
-                }
-                Button {
-                    hSalida = Date.now
-                } label: {
-                    VStack {
-                        Text("Salida")
-                        Text(hSalida.formatted(date: .omitted, time: .shortened))
-                    }
-                }
+                ButtonDateView(hora: $horas.laboral.horaEntrada, name: "Entrada")
+                ButtonDateView(hora: $horas.laboral.horaSalida, name: "Salida")
             }
-            Text("Total de horas: \(calculaTotalHoras(hEntrada: hEntrada, hSalida: hSalida))")
+            Text("Total de horas: \(horas.calculaTotalHoras(hEntrada: horas.laboral.horaEntrada, hSalida: horas.laboral.horaSalida))")
         }
         .padding()
     }
     
-    func calculaTotalHoras(hEntrada: Date, hSalida: Date) -> String {
-        let calendario = Calendar.autoupdatingCurrent
-        var componentes = calendario.dateComponents([.hour, .minute], from: hEntrada)
-        let entrada = (componentes.hour ?? 0) * 60 + (componentes.minute ?? 0)
-        
-        componentes = calendario.dateComponents([.hour, .minute], from: hSalida)
-        let salida = (componentes.hour ?? 0) * 60 + (componentes.minute ?? 0)
-        var total = salida - entrada    //minutos
-        
-        return "\(total / 60):\(total % 60)"
-    }
+    
 }
 
 #Preview {
-    ContentView(hEntrada: Date.now, hSalida: Date.now, fecha: Date.now)
+    ContentView(horas: HorasVM(horas: diaLaboral(fecha: Date.now, horaEntrada: Date.now, horaSalida: Date.now)))
 }

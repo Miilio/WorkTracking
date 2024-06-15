@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct ButtonDateView: View {
+    @Binding var hora: Date
+    let name: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            hora = Date.now
+        } label: {
+            VStack {
+                Text("\(name)")
+                Text(hora.formatted(date: .omitted, time: .shortened))
+            }
+        }
     }
 }
 
 #Preview {
-    ButtonDateView()
+    ButtonDateView(hora: .constant(Date.now), name: "Entrada")
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3E10B12C1DB3350027C8EC /* ButtonDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E10B02C1DB3350027C8EC /* ButtonDateView.swift */; };
+		0E3E10B32C1DB4370027C8EC /* HorasVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E10B22C1DB4370027C8EC /* HorasVM.swift */; };
 		0E5E9D7E2C1CC415000661F9 /* WorkTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E9D7D2C1CC415000661F9 /* WorkTrackingApp.swift */; };
 		0E5E9D802C1CC415000661F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E9D7F2C1CC415000661F9 /* ContentView.swift */; };
 		0E5E9D822C1CC416000661F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5E9D812C1CC416000661F9 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E3E10B02C1DB3350027C8EC /* ButtonDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDateView.swift; sourceTree = "<group>"; };
+		0E3E10B22C1DB4370027C8EC /* HorasVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorasVM.swift; sourceTree = "<group>"; };
 		0E5E9D7A2C1CC415000661F9 /* WorkTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5E9D7D2C1CC415000661F9 /* WorkTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTrackingApp.swift; sourceTree = "<group>"; };
 		0E5E9D7F2C1CC415000661F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,8 @@
 				0E5E9D7F2C1CC415000661F9 /* ContentView.swift */,
 				0E5E9D812C1CC416000661F9 /* Assets.xcassets */,
 				0E5E9D832C1CC416000661F9 /* Preview Content */,
+				0E3E10B02C1DB3350027C8EC /* ButtonDateView.swift */,
+				0E3E10B22C1DB4370027C8EC /* HorasVM.swift */,
 			);
 			path = WorkTracking;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3E10B32C1DB4370027C8EC /* HorasVM.swift in Sources */,
+				0E3E10B12C1DB3350027C8EC /* ButtonDateView.swift in Sources */,
 				0E5E9D802C1CC415000661F9 /* ContentView.swift in Sources */,
 				0E5E9D7E2C1CC415000661F9 /* WorkTrackingApp.swift in Sources */,
 			);
