@@ -7,29 +7,30 @@
 import SwiftUI
 
 struct TrackDayView: View {
-    @AppStorage ("hourIn") var hourIn: Int = 0
-    @AppStorage ("hourOut") var hourOut: Int = 0
+    @AppStorage ("minutesIn") var minutesIn: Int = 0
+    @AppStorage ("minutesOut") var minutesOut: Int = 0
     
     var body: some View {
         ScrollView {
             GroupBox {
                 Text(Date().dateToString())
                 
-                HStack {
-                    ButtonDayView(hourIn: hourIn, hourOut: hourOut, typeHour: false)
-                    
-                    ButtonDayView(hourIn: hourIn, hourOut: hourOut, typeHour: true)
-                }
-                .padding(.all)
+                ButtonDayView()
+                    .disabled(false)
+                    .padding()
                 
-                Text("Total horas: \(calculatedHours(hourIn: hourIn, hourOut: hourOut))")
-
+                VStack (alignment: .leading) {
+                    Text("Entrada: \(minutesIn.minutesToHour(minutes: minutesIn))")
+                    Text("Salida: \(minutesOut.minutesToHour(minutes: minutesOut))")
+                        .font(.callout)
+                    Text("Total horas: \(calculatedHours(minutesIn: minutesIn, minutesOut: minutesOut))")
+                }
             }
         }
     }
     
-    func calculatedHours(hourIn: Int, hourOut: Int) -> String {
-        let hour = hourOut - hourIn
+    func calculatedHours(minutesIn: Int, minutesOut: Int) -> String {
+        let hour = minutesOut - minutesIn
         
         if (hour > 0) {
             return hour.minutesToHour(minutes: hour)

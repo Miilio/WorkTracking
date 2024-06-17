@@ -14,13 +14,13 @@ import Foundation
 @Observable
 class ModelDay {
     var date: String
-    var hourIn: Int     
-    var hourOut: Int
+    var minutesIn: Int     
+    var minutesOut: Int
     
     init(date: String, hourIn: Int, hourOut: Int) {
         self.date = date
-        self.hourIn = hourIn
-        self.hourOut = hourOut
+        self.minutesIn = hourIn
+        self.minutesOut = hourOut
     }
 }
 

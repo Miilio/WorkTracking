@@ -8,25 +8,25 @@
 import SwiftUI
 
 struct ButtonDayView: View {
-    @AppStorage ("hourIn") var hourIn: Int = 0
-    @AppStorage ("hourOut") var hourOut: Int = 0
-    @State var typeHour: Bool = false               //false: hourIn; true: hourOut
+    @AppStorage ("minutesIn") var minutesIn: Int = 0
+    @AppStorage ("minutesOut") var minutesOut: Int = 0
+    @AppStorage ("typeHour") var typeHour: Bool = false //false: hora entrada; true: hora salida
     
     var body: some View {
         Button {
             let date = Date.now
             if (typeHour) {
-                hourOut = date.hourTominute(date: date)
+                minutesOut = date.hourTominute(date: date)
             } else {
-                hourIn = date.hourTominute(date: date)
+                minutesIn = date.hourTominute(date: date)
             }
+            typeHour.toggle()
         } label: {
             VStack {
                 Image(systemName: typeHour ? "square.and.arrow.up.on.square" : "square.and.arrow.down.on.square" )
                     .font(.largeTitle)
                     .padding(.horizontal)
-                Text("\(typeHour ?  hourOut.minutesToHour(minutes: hourOut) : hourIn.minutesToHour(minutes: hourIn))")
-                    .font(.callout)
+                Text(typeHour ? "Salida" : "Entrada")
             }
         }
     }
