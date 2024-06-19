@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
 		0E3E10B12C1DB3350027C8EC /* ButtonDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E10B02C1DB3350027C8EC /* ButtonDateView.swift */; };
 		0E3E10B32C1DB4370027C8EC /* HorasVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E10B22C1DB4370027C8EC /* HorasVM.swift */; };
+=======
+>>>>>>> Stashed changes
 		0E5E9D7E2C1CC415000661F9 /* WorkTrackingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E9D7D2C1CC415000661F9 /* WorkTrackingApp.swift */; };
 		0E5E9D802C1CC415000661F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E5E9D7F2C1CC415000661F9 /* ContentView.swift */; };
 		0E5E9D822C1CC416000661F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E5E9D812C1CC416000661F9 /* Assets.xcassets */; };
@@ -16,8 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
 		0E3E10B02C1DB3350027C8EC /* ButtonDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDateView.swift; sourceTree = "<group>"; };
 		0E3E10B22C1DB4370027C8EC /* HorasVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorasVM.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> Stashed changes
 		0E5E9D7A2C1CC415000661F9 /* WorkTracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTracking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E5E9D7D2C1CC415000661F9 /* WorkTrackingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTrackingApp.swift; sourceTree = "<group>"; };
 		0E5E9D7F2C1CC415000661F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +61,10 @@
 		0E5E9D7C2C1CC415000661F9 /* WorkTracking */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< Updated upstream
+=======
+				0E8FA63B2C1F287200379D52 /* TrackDay */,
+>>>>>>> Stashed changes
 				0E5E9D7D2C1CC415000661F9 /* WorkTrackingApp.swift */,
 				0E5E9D7F2C1CC415000661F9 /* ContentView.swift */,
 				0E5E9D812C1CC416000661F9 /* Assets.xcassets */,
@@ -73,6 +83,44 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
+=======
+		0E8FA63B2C1F287200379D52 /* TrackDay */ = {
+			isa = PBXGroup;
+			children = (
+				0EDFE6DE2C21AD8F009999EB /* Extensions */,
+				0EDFE6DD2C21AD70009999EB /* Views */,
+				0EDFE6DC2C21AD69009999EB /* Models */,
+			);
+			path = TrackDay;
+			sourceTree = "<group>";
+		};
+		0EDFE6DC2C21AD69009999EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0E8FA63C2C1F28A000379D52 /* ModelDay.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0EDFE6DD2C21AD70009999EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E7262102C1F50BB00B0A6F3 /* ButtonDayView.swift */,
+				0E8FA63E2C1F292C00379D52 /* TrackDayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0EDFE6DE2C21AD8F009999EB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0E7262122C1F58A100B0A6F3 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,10 +191,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< Updated upstream
 				0E3E10B32C1DB4370027C8EC /* HorasVM.swift in Sources */,
 				0E3E10B12C1DB3350027C8EC /* ButtonDateView.swift in Sources */,
 				0E5E9D802C1CC415000661F9 /* ContentView.swift in Sources */,
 				0E5E9D7E2C1CC415000661F9 /* WorkTrackingApp.swift in Sources */,
+=======
+				0E7262132C1F58A100B0A6F3 /* Extensions.swift in Sources */,
+				0E8FA63F2C1F292C00379D52 /* TrackDayView.swift in Sources */,
+				0E8FA63D2C1F28A000379D52 /* ModelDay.swift in Sources */,
+				0E5E9D7E2C1CC415000661F9 /* WorkTrackingApp.swift in Sources */,
+				0E7262112C1F50BB00B0A6F3 /* ButtonDayView.swift in Sources */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
